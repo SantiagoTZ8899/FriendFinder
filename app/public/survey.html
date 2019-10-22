@@ -63,7 +63,7 @@
 
             <h4><strong>One</strong></h4>
             <h4>Turn on, Tune in, Drop out</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="one" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -74,7 +74,7 @@
 
             <h4><strong>Two</strong></h4>
             <h4>Going to space would be awesome!</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="two" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -85,7 +85,7 @@
 
             <h4><strong>Three</strong></h4>
             <h4>Dogs are the bestest</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="three" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -96,7 +96,7 @@
 
             <h4><strong>Four</strong></h4>
             <h4>We are a cancer to the Earth</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="four" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -107,7 +107,7 @@
 
             <h4><strong>Five</strong></h4>
             <h4>Let's break the rules</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="five" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -118,7 +118,7 @@
 
             <h4><strong>Six</strong></h4>
             <h4>Nothing Lasts, but Nothing is Lost</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="six" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -129,7 +129,7 @@
 
             <h4><strong>Seven</strong></h4>
             <h4>The Body is a Temple and Nightclub at the same time</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="seven" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -140,7 +140,7 @@
 
             <h4><strong>Eight</strong></h4>
             <h4>South Park is a super funny show</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="eight" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -151,7 +151,7 @@
 
             <h4><strong>Nine</strong></h4>
             <h4>South Park is a super funny show</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="nine" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -162,7 +162,7 @@
 
             <h4><strong>Ten</strong></h4>
             <h4>Videogames are fun!</h4>
-            <select class="chosen-select" id="q1" required>
+            <select class="chosen-select" id="ten" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -206,7 +206,36 @@
             </div>
     
     <script type="text/javascript">
-    
+
+        // capture input from survery
+        $("#submit").on("click", (event) => {
+            event.preventDefault();
+
+            // this should make an object from the survey info
+            let coolData = {
+                name: $("#name.").val(),
+                photo: $("#photo").val(),
+                scores:[
+                    $("#one").val(),
+                    $("#two").val(),
+                    $("#three").val(),
+                    $("#four").val(),
+                    $("#five").val(),
+                    $("#six").val(),
+                    $("#seven").val(),
+                    $("#eight").val(),
+                    $("#nine").val(),
+                    $("#ten").val(),
+                ]
+            };
+
+            // now I need to send the data to the API
+            $.post("api/friends", coolData, (data) => {
+                $("#match-name").text(data.name);
+                $("#match-img").attr("src", data.photo);
+                $("#results-modal").modal("toggle");
+            });
+        });
     </script>
 </body>
 </html>
