@@ -7,12 +7,16 @@
 
     <title>The Coolest Friend Finder (The CFF)</title>
 
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- ajax -->
 
+    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    
     
     <style>
     .container {
@@ -59,7 +63,7 @@
 
             <h4><strong>One</strong></h4>
             <h4>Turn on, Tune in, Drop out</h4>
-            <select id="one" required>
+            <select id="one" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -70,7 +74,7 @@
 
             <h4><strong>Two</strong></h4>
             <h4>Going to space would be awesome!</h4>
-            <select id="two" required>
+            <select id="two" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -81,7 +85,7 @@
 
             <h4><strong>Three</strong></h4>
             <h4>Dogs are the bestest</h4>
-            <select id="three" required>
+            <select id="three" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -92,7 +96,7 @@
 
             <h4><strong>Four</strong></h4>
             <h4>We are a cancer to the Earth</h4>
-            <select  id="four" required>
+            <select  id="four" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -103,7 +107,7 @@
 
             <h4><strong>Five</strong></h4>
             <h4>Let's break the rules</h4>
-            <select  id="five" required>
+            <select  id="five" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -114,7 +118,7 @@
 
             <h4><strong>Six</strong></h4>
             <h4>Nothing Lasts, but Nothing is Lost</h4>
-            <select  id="six" required>
+            <select  id="six" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -125,7 +129,7 @@
 
             <h4><strong>Seven</strong></h4>
             <h4>The Body is a Temple and Nightclub at the same time</h4>
-            <select  id="seven" required>
+            <select  id="seven" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -136,7 +140,7 @@
 
             <h4><strong>Eight</strong></h4>
             <h4>South Park is a super funny show</h4>
-            <select id="eight" required>
+            <select id="eight" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -147,7 +151,7 @@
 
             <h4><strong>Nine</strong></h4>
             <h4>South Park is a super funny show</h4>
-            <select id="nine" required>
+            <select id="nine" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -158,7 +162,7 @@
 
             <h4><strong>Ten</strong></h4>
             <h4>Videogames are fun!</h4>
-            <select id="ten" required>
+            <select id="ten" class="chosen-select" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -200,24 +204,26 @@
     
             </div>
     
-    <script type="text/javascript">
+    
+        <script type="text/javascript">
+
 
     // // chosen css
-    // var config = {
-    //     ".chosen-select": {},
-    //     ".chosen-select-deselect": {
-    //         allow_single_deselect: true
-    //     },
-    //     ".chosen-select-no-single": {
-    //         disable_search_threshold: 10
-    //     },
-    //     ".chosen-select-no-results": {
-    //         no_results_text: "Nothing here.."
-    //     },
-    //     ".chosen-select-width": {
-    //         width: "95%"
-    //     }
-    // };
+    let config = {
+        ".chosen-select": {},
+        ".chosen-select-deselect": {
+            allow_single_deselect: true
+        },
+        ".chosen-select-no-single": {
+            disable_search_threshold: 10
+        },
+        ".chosen-select-no-results": {
+            no_results_text: "Nothing here.."
+        },
+        ".chosen-select-width": {
+            width: "95%"
+        }
+    };
 
     
 
@@ -225,6 +231,21 @@
         $("#submit").on("click", (event) => {
             event.preventDefault();
 
+            function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+        if ($(this).val() === "") {
+            isValid = false;
+        }
+        });
+        $(".chosen-select").each(function() {
+        if ($(this).val() === "") {
+            isValid = false;
+        }
+        });
+        return isValid;
+    }
+    if (validateForm()) {
             // this should make an object from the survey info
             let coolData = {
                 name: $("#name").val(),
@@ -250,7 +271,11 @@
                 $("#match-img").attr("src", data.photo);
                 $("#results-modal").modal("toggle");
             });
-        });
+        } else {
+        alert("Please fill out all fields before submitting!");
+    }
+});
+  
     </script>
 </body>
 </html>
