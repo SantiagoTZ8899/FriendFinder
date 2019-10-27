@@ -13,7 +13,7 @@ module.exports = function(app) {
         for (let i = 0; i < friendsData.length; i++) {
             let answerDifference = 0;
 
-            for (let j = 0; j < userAnswers.length; i++) {
+            for (let j = 0; j < userAnswers.length; j++) {
                 answerDifference +=(Math.abs(parseInt(friendsData[i].scores[j]) - parseInt(userAnswers[j])))
             }
 

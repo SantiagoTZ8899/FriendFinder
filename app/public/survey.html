@@ -10,16 +10,9 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- jquery -->
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <!-- ajax -->
 
-    <!-- css styling -->
-    <link href="~/Content/Bootstrap/css/chosen.min.css" rel="stylesheet" />
-    <script src="~/Content/Bootstrap/js/chosen.jquery.min.js" type="text/javascript"></script>
     
     <style>
     .container {
@@ -66,7 +59,7 @@
 
             <h4><strong>One</strong></h4>
             <h4>Turn on, Tune in, Drop out</h4>
-            <select class="chosen-select" id="one" required>
+            <select id="one" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -77,7 +70,7 @@
 
             <h4><strong>Two</strong></h4>
             <h4>Going to space would be awesome!</h4>
-            <select class="chosen-select" id="two" required>
+            <select id="two" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -88,7 +81,7 @@
 
             <h4><strong>Three</strong></h4>
             <h4>Dogs are the bestest</h4>
-            <select class="chosen-select" id="three" required>
+            <select id="three" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -99,7 +92,7 @@
 
             <h4><strong>Four</strong></h4>
             <h4>We are a cancer to the Earth</h4>
-            <select class="chosen-select" id="four" required>
+            <select  id="four" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -110,7 +103,7 @@
 
             <h4><strong>Five</strong></h4>
             <h4>Let's break the rules</h4>
-            <select class="chosen-select" id="five" required>
+            <select  id="five" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -121,7 +114,7 @@
 
             <h4><strong>Six</strong></h4>
             <h4>Nothing Lasts, but Nothing is Lost</h4>
-            <select class="chosen-select" id="six" required>
+            <select  id="six" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -132,7 +125,7 @@
 
             <h4><strong>Seven</strong></h4>
             <h4>The Body is a Temple and Nightclub at the same time</h4>
-            <select class="chosen-select" id="seven" required>
+            <select  id="seven" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -143,7 +136,7 @@
 
             <h4><strong>Eight</strong></h4>
             <h4>South Park is a super funny show</h4>
-            <select class="chosen-select" id="eight" required>
+            <select id="eight" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -154,7 +147,7 @@
 
             <h4><strong>Nine</strong></h4>
             <h4>South Park is a super funny show</h4>
-            <select class="chosen-select" id="nine" required>
+            <select id="nine" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -165,7 +158,7 @@
 
             <h4><strong>Ten</strong></h4>
             <h4>Videogames are fun!</h4>
-            <select class="chosen-select" id="ten" required>
+            <select id="ten" required>
                 <option value="">Select Option</option>
                 <option value="1">1 (Strongly Disagree)</option>
                 <option value="2">2</option>
@@ -198,8 +191,7 @@
                     </div>
                     <div class="modal-body">
                         <h2 id="match-name"></h2>
-                        <img id="match-img" style="max-width:500px;max-height:500px;" src="https://coolpic.awesomeness.jpg"
-                            alt="">
+                        <img id="match-img" style="max-width:500px;max-height:500px;">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -210,22 +202,24 @@
     
     <script type="text/javascript">
 
-    // chosen css
-    let config = {
-        ".chosen-select": {},
-        ".chosen-select-deselect": {
-            allow_single_deselect: true
-        },
-        ".chosen-select-no-single": {
-            disable_search_threshold: 10
-        },
-        ".chosen-select-no-results": {
-            no_results_text: "Nothing here.."
-        },
-        ".chosen-select-width": {
-            width: "95%"
-        }
-    };
+    // // chosen css
+    // var config = {
+    //     ".chosen-select": {},
+    //     ".chosen-select-deselect": {
+    //         allow_single_deselect: true
+    //     },
+    //     ".chosen-select-no-single": {
+    //         disable_search_threshold: 10
+    //     },
+    //     ".chosen-select-no-results": {
+    //         no_results_text: "Nothing here.."
+    //     },
+    //     ".chosen-select-width": {
+    //         width: "95%"
+    //     }
+    // };
+
+    
 
         // capture input from survery
         $("#submit").on("click", (event) => {
@@ -233,7 +227,7 @@
 
             // this should make an object from the survey info
             let coolData = {
-                name: $("#name.").val(),
+                name: $("#name").val(),
                 photo: $("#photo").val(),
                 scores:[
                     $("#one").val(),
@@ -248,9 +242,10 @@
                     $("#ten").val(),
                 ]
             };
+            console.log(coolData);
 
             // now I need to send the data to the API
-            $.post("api/friends", coolData, (data) => {
+            $.post("/api/friends", coolData, (data) => {
                 $("#match-name").text(data.name);
                 $("#match-img").attr("src", data.photo);
                 $("#results-modal").modal("toggle");
@@ -259,3 +254,4 @@
     </script>
 </body>
 </html>
+
